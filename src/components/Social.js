@@ -70,7 +70,7 @@ function Social() {
         <div className="social-content">
           {/* Left Section: Name */}
           <div className="social-left">
-            <h2 className="social-name">Lei Guo</h2>
+            <h2 className="social-name">Joanne Wang</h2>
             <p className="social-title">Broker</p>
             <div className="social-social-section">
             <div className="social-icons">
@@ -99,7 +99,7 @@ function Social() {
             <div className="social-contact">
               <p>Direct: (613) 986-7089</p>
               <p>Office: (613) 592-6400</p>
-              <p>info@leiguorealty.com</p>
+              <p>info@joannerealty.com</p>
               <p>484 Hazeldean Rd, Kanata, ON, K2L 1V4</p>
             </div>
           </div>

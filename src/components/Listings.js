@@ -40,7 +40,7 @@ function Listings() {
 
   return (
     <section className="listings">
-      <div className="container animate-fade-in">
+      <div className="animate-fade-in">
         <h2>Living in Ottawa</h2>
         <div className="listings-grid-wrapper">
           <div

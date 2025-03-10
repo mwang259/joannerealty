@@ -8,7 +8,11 @@ body {
   color: #ffffff;
   overflow-x: hidden;
 }
-
+.container{
+  max-width: 1400px;
+  margin: 0 auto;
+  height: auto;
+}
 
 
 /* 头部样式 */
@@ -162,23 +166,21 @@ nav ul li:hover .dropdown {
 }
 
 .language-dropdown {
-  min-width: 100px;
-  z-index: 1002;
+  position: absolute;
+  top: 100%;
+  right: 0;
   background-color: #2d3748;
-  border: 1px solid #f1c40f;
-  color: #ffffff;
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+  width: 80px; /* 强制宽度 */
+
+  overflow-x: hidden; /* 防止内容溢出 */
+  white-space: nowrap; /* 防止换行 */
 }
 
-.language-dropdown a {
-  color: #f1c40f;
-  padding: 0.5rem 1rem;
-  display: block;
-  font-size: 1rem;
-  text-decoration: none;
-  background-color: #2d3748;
-}
+
 
 .language-dropdown a:hover {
   background-color: #4a5b78;
@@ -643,11 +645,13 @@ nav ul li:hover .dropdown {
   overflow: hidden; /* Hide overflow for carousel */
   display: flex;
   align-items: center; /* Center content vertically */
+  
 }
 
-.listings .container {
+.listings .containerlisting {
   width: 100%; /* Occupy full screen width */
   padding: 0; /* Remove padding to avoid gaps */
+  height: auto;
 }
 
 .listings h2 {
@@ -878,7 +882,7 @@ nav ul li:hover .dropdown {
 }
 
 .social-name {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0 0 0.5rem 0;
   color: #f1c40f;
   font-weight: 700;

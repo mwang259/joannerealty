@@ -12,7 +12,7 @@ const languageContent = {
     about: 'About',
     resources: 'Resources',
   },
-  中文: {
+  Chinese: {
     home: '首页',
     listings: '房源',
     selling: '出售',
@@ -20,7 +20,7 @@ const languageContent = {
     about: '关于',
     resources: '资源',
   },
-  日文: {
+  Japanese: {
     home: 'ホーム',
     listings: '物件',
     selling: '売却',
@@ -162,11 +162,11 @@ function Header() {
                   <a href="#en" onClick={() => selectLanguage('EN')}>
                     EN
                   </a>
-                  <a href="#zh" onClick={() => selectLanguage('中文')}>
-                    中文
+                  <a href="#zh" onClick={() => selectLanguage('Chinese')}>
+                    Chinese
                   </a>
-                  <a href="#jp" onClick={() => selectLanguage('日文')}>
-                    日文
+                  <a href="#jp" onClick={() => selectLanguage('Japanese')}>
+                    Japanese
                   </a>
                 </div>
               </li>
@@ -190,11 +190,11 @@ function Header() {
               <a href="#en" onClick={() => selectLanguage('EN')}>
                 EN
               </a>
-              <a href="#zh" onClick={() => selectLanguage('中文')}>
-                中文
+              <a href="#zh" onClick={() => selectLanguage('Chinese')}>
+                Chinese
               </a>
-              <a href="#jp" onClick={() => selectLanguage('日文')}>
-                日文
+              <a href="#jp" onClick={() => selectLanguage('Japanese')}>
+                Japanese
               </a>
             </div>
           </div>
