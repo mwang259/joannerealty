@@ -1,12 +1,14 @@
-import React from 'react';
+// Footer.js
+import React, { useContext } from 'react';
+import { LanguageContext } from './LanguageContext';
 
 function Footer() {
+  const { content } = useContext(LanguageContext);
+
   return (
     <footer>
       <div className="container">
-        <p>
-        &copy mengyuan wang & haopeng wang
-        </p>
+        <p>{content.footer_copyright}</p>
       </div>
     </footer>
   );

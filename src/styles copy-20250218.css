@@ -1,0 +1,790 @@
+/* src/styles.css */
+
+/* 全局样式 */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #1a202c;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 头部样式 */
+header {
+  background-color: #1a202c;
+  padding: 1.5rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f1c40f;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.broker-name {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+/* 汉堡菜单按钮 */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #f1c40f;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: #f1c40f;
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 0.5rem 0.8rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  background-color: rgba(241, 196, 15, 0.2);
+  border-radius: 4px;
+}
+
+nav ul li a .dropdown-icon {
+  font-size: 0.7rem;
+  transition: transform 0.3s;
+}
+
+nav ul li:hover a .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  background-color: #2d3748;
+  min-width: 235px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  display: none;
+  border-radius: 0.25rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+nav ul li:hover .dropdown {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 房源下拉框特定样式 */
+.listings-dropdown {
+  min-width: 225px;
+}
+
+/* 语言下拉框样式 */
+.language-toggle {
+  position: relative;
+}
+
+.language-toggle a {
+  color: #f1c40f;
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 0.5rem 0.8rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.language-toggle a:hover {
+  color: #ffffff;
+  background-color: rgba(241, 196, 15, 0.2);
+  border-radius: 4px;
+}
+
+.language-dropdown {
+  min-width: 100px;
+  z-index: 1002;
+  background-color: #2d3748;
+  border: 1px solid #f1c40f;
+  color: #ffffff;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.language-dropdown a {
+  color: #f1c40f;
+  padding: 0.5rem 1rem;
+  display: block;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: #2d3748;
+}
+
+.language-dropdown a:hover {
+  background-color: #4a5b78;
+}
+
+.language-toggle:hover .language-dropdown {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 英雄部分样式 */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 6rem 0 4rem;
+  min-height: 720px;
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 14rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin: 0 0 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.hero-buttons button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: rgba(241, 196, 15, 0.8);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.hero-buttons button:hover {
+  background-color: #e0b50a;
+  transform: scale(1.05);
+}
+
+/* 关于部分样式 */
+.about {
+  padding: 7.5rem 0;
+  background-color: #1a202c;
+  color: #ffffff;
+  opacity: 0; /* 初始隐藏，用于淡入动画 */
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.about-text {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem 0;
+  color: #f1c40f;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #d1d5db;
+  margin-bottom: 2rem;
+}
+
+.about-text .btn {
+  background-color: #f1c40f;
+  color: #1a202c;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.about-text .btn:hover {
+  background-color: #e0b50a;
+  transform: scale(1.05);
+}
+
+.badges {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.badges img {
+  max-width: 80px;
+  height: auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-image {
+  flex: 1;
+  text-align: right;
+}
+
+.about-image img {
+  width: 580px;
+  height: 645px;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* 动态效果 */
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1s ease-out forwards;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 0.5s;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 服务部分样式 */
+.services {
+  padding: 8rem 0;
+  background-color: #1a202c;
+  color: #ffffff;
+  text-align: center;
+  opacity: 0; /* 初始隐藏，用于淡入动画 */
+  position: relative;
+}
+
+.services-header {
+  position: relative;
+  height: 770px; /* 增加高度以显示完整图片 */
+  background-image: url('../public/images/services-selling-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.services-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* 调整遮罩透明度 */
+  z-index: 1;
+}
+
+.services-header h2 {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 增加文字阴影 */
+}
+
+.service-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  background-color: #1a2a44; /* 深蓝色背景，与参考图片一致 */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-text {
+  flex: 1;
+  text-align: left;
+}
+
+.service-text h3 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.service-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #d1d5db;
+}
+
+.service-text .btn {
+  background-color: #f1c40f;
+  color: #1a202c;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.service-text .btn:hover {
+  background-color: #e0b50a;
+  transform: scale(1.05);
+}
+
+.service-image {
+  flex: 1;
+  text-align: right;
+}
+
+.service-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 房源列表部分样式 */
+.listings {
+  padding: 4rem 0;
+  background-color: #1a202c;
+  text-align: center;
+}
+
+.listings h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f1c40f;
+}
+
+.listings-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.listing-card {
+  background-color: #2d3748;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 250px;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
+}
+
+.listing-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.listing-card p {
+  margin: 0.75rem;
+  font-size: 1rem;
+  color: #d1d5db;
+}
+
+.listing-card .price {
+  color: #f1c40f;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* 评论部分样式 */
+.reviews {
+  padding: 4rem 0;
+  background-color: #ffffff;
+  color: #1a202c;
+  text-align: center;
+}
+
+.reviews h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2d3748;
+}
+
+.reviews p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #4a5b78;
+}
+
+/* 社交部分样式 */
+.social {
+  padding: 4rem 0;
+  background-color: #1a202c;
+  text-align: center;
+  color: #ffffff;
+}
+
+.social h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #f1c40f;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.social-icons a {
+  color: #f1c40f;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #e0b50a;
+}
+
+.contact-info {
+  font-size: 1rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  color: #d1d5db;
+}
+
+.contact-info img {
+  max-width: 120px;
+  height: auto;
+  margin: 0.5rem;
+}
+
+/* 页脚样式 */
+footer {
+  background-color: #1a202c;
+  padding: 2rem 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.85rem;
+  border-top: 1px solid #2d3748;
+}
+
+footer p {
+  color: #d1d5db;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .logo-section {
+    margin-bottom: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1a202c;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  nav.nav-open {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .dropdown {
+    position: static;
+    width: 100%;
+    background-color: #2d3748;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  nav ul li:hover .dropdown,
+  nav.nav-open .dropdown {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .listings-dropdown {
+    min-width: 100%;
+    transform: translateX(0) translateY(-10px);
+  }
+
+  nav ul li:hover .listings-dropdown {
+    transform: translateX(0) translateY(0);
+  }
+
+  .language-dropdown {
+    position: static;
+    width: 100%;
+    transform: translateX(0) translateY(-10px);
+  }
+
+  .language-toggle:hover .language-dropdown {
+    transform: translateX(0) translateY(0);
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .about-image {
+    text-align: center;
+  }
+
+  .services-header {
+    height: 250px; /* 减小小屏幕上的高度 */
+  }
+
+  .services-header h2 {
+    font-size: 2rem;
+  }
+
+  .service-section {
+    flex-direction: column;
+  }
+
+  .service-text {
+    text-align: center;
+  }
+
+  .service-image {
+    text-align: center;
+  }
+
+  .hero {
+    padding: 4rem 0 2rem;
+    min-height: 400px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-buttons button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .service-section,
+  .about {
+    flex-direction: column;
+  }
+
+  .about-text,
+  .about-image {
+    flex: 100%;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .broker-name {
+    font-size: 1rem;
+  }
+
+  .hamburger {
+    font-size: 1.2rem;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .services-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .service-text h3 {
+    font-size: 1.8rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-buttons button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,49 +1,24 @@
-import React, { useState, useEffect } from 'react';
+// src/components/Header.js
+import React, { useState, useEffect, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-
-// 语言内容映射
-const languageContent = {
-  EN: {
-    home: 'Home',
-    listings: 'Listings',
-    selling: 'Selling',
-    buying: 'Buying',
-    about: 'About',
-    resources: 'Resources',
-  },
-  Chinese: {
-    home: '首页',
-    listings: '房源',
-    selling: '出售',
-    buying: '购买',
-    about: '关于',
-    resources: '资源',
-  },
-  Japanese: {
-    home: 'ホーム',
-    listings: '物件',
-    selling: '売却',
-    buying: '購入',
-    about: '会社概要',
-    resources: 'リソース',
-  },
-};
+import { LanguageContext } from './LanguageContext';
 
 function Header() {
+  const { language, setLanguage, content } = useContext(LanguageContext);
   const [isListingsOpen, setIsListingsOpen] = useState(false);
   const [isSellingOpen, setIsSellingOpen] = useState(false);
+  const [isBuyingOpen, setIsBuyingOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [language, setLanguage] = useState('EN'); // 默认语言为英文
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false); // 控制语言下拉框
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // 检测屏幕尺寸
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    handleResize(); // 初始检查
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -53,41 +28,31 @@ function Header() {
   };
 
   const toggleLanguageDropdown = (e) => {
-    e.preventDefault(); // 阻止默认跳转
-    console.log('Toggling language dropdown, current isLanguageOpen:', isLanguageOpen); // 调试日志
-    setIsLanguageOpen((prev) => {
-      const newValue = !prev;
-      console.log('New isLanguageOpen:', newValue); // 调试日志
-      return newValue;
-    });
+    e.preventDefault();
+    setIsLanguageOpen((prev) => !prev);
   };
 
   const selectLanguage = (lang) => {
-    console.log('Selecting language:', lang); // 调试日志
     setLanguage(lang);
-    setIsLanguageOpen(false); // 选择后关闭下拉框
+    setIsLanguageOpen(false);
   };
-
-  const content = languageContent[language];
 
   return (
     <header>
-      <div className="container header-content">
+      <div className="container-full header-content">
         <div className="logo-section">
           <div className="logo">
-            <img src="/images/logo.jpg" alt="Joanne Realty Logo" />
+            <img src="/images/logo2.png" alt="Joanne Realty Logo" />
           </div>
-          <span className="broker-name">Joanne Wang Broker</span>
+          <span className="broker-name">Joanne Wang, Ph.D.</span>
         </div>
 
-        {/* 汉堡菜单按钮 */}
         {isMobile && (
           <button className="hamburger" onClick={toggleNav}>
             <FontAwesomeIcon icon={faBars} />
           </button>
         )}
 
-        {/* 导航栏内容 */}
         <nav className={isNavOpen || !isMobile ? 'nav-open' : ''}>
           <ul>
             <li>
@@ -104,9 +69,9 @@ function Header() {
                 className="dropdown listings-dropdown"
                 style={{ display: isListingsOpen ? 'block' : 'none' }}
               >
-                <a href="#map-search">Map Search</a>
-                <a href="#criteria-search">Featured Listings</a>
-                <a href="#community-search">Search Listings</a>
+                <a href="#map-search">{content.Map_search}</a>
+                <a href="#Featured_listings">{content.Featured_listings}</a>
+                <a href="#Search_listings">{content.Search_listings}</a>
               </div>
             </li>
             <li
@@ -120,39 +85,53 @@ function Header() {
                 className="dropdown"
                 style={{ display: isSellingOpen ? 'block' : 'none' }}
               >
-                <a href="#Selling Resources">Selling Resources</a>
-                <a href="#Free Evaluation">Free Evaluation</a>
+                <a href="#Selling Resources">{content.selling_resources}</a>
+                <a href="#Free Evaluation">{content.free_evaluation}</a>
               </div>
             </li>
             <li
-              onMouseEnter={() => setIsSellingOpen(true)}
-              onMouseLeave={() => setIsSellingOpen(false)}
+              onMouseEnter={() => setIsBuyingOpen(true)}
+              onMouseLeave={() => setIsBuyingOpen(false)}
             >
               <a href="#buying">
                 {content.buying} <span className="dropdown-icon">▼</span>
               </a>
               <div
                 className="dropdown"
-                style={{ display: isSellingOpen ? 'block' : 'none' }}
+                style={{ display: isBuyingOpen ? 'block' : 'none' }}
               >
-                <a href="#why-choose-me">Buying Resources</a>
+                <a href="#why-choose-me">{content.buying_resources}</a>
               </div>
             </li>
             <li>
               <a href="#about">{content.about}</a>
             </li>
-            <li>
+            <li
+              onMouseEnter={() => setIsResourcesOpen(true)}
+              onMouseLeave={() => setIsResourcesOpen(false)}
+            >
               <a href="#resources">
                 {content.resources} <span className="dropdown-icon">▼</span>
               </a>
+              <div
+                className="dropdown"
+                style={{ display: isResourcesOpen ? 'block' : 'none' }}
+              >
+                <a href="https://www.realtor.ca/calculator#v=payment" target="blank">
+                  {content.Mortgage_calculation}
+                </a>
+                <a href="https://www.realtor.ca/calculator#v=affordability" target="blank">
+                  {content.Loan_calculation}
+                </a>
+                <a href="https://www.realtor.ca/calculator#v=landtransfertax" target="blank">
+                  {content.Transfer_calculation}
+                </a>
+              </div>
             </li>
-            {/* 语言切换（小屏幕） */}
+
             {isMobile && (
               <li className="mobile-language">
-                <a
-                  href="#language"
-                  onClick={toggleLanguageDropdown}
-                >
+                <a href="#language" onClick={toggleLanguageDropdown}>
                   {language}
                 </a>
                 <div
@@ -174,13 +153,9 @@ function Header() {
           </ul>
         </nav>
 
-        {/* 语言切换（大屏幕） */}
         {!isMobile && (
           <div className="language-toggle">
-            <a
-              href="#language"
-              onClick={toggleLanguageDropdown}
-            >
+            <a href="#language" onClick={toggleLanguageDropdown}>
               {language}
             </a>
             <div

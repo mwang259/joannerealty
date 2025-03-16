@@ -1,4 +1,6 @@
+// src/App.js
 import React from 'react';
+import { LanguageProvider } from './components/LanguageContext'; // 引入 LanguageProvider
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,16 +12,15 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div>
+    <LanguageProvider>
       <Header />
       <Hero />
       <About />
       <Services />
       <Listings />
-      {/* <Reviews /> */}
-      <Social />
+      <Social/>
       <Footer />
-    </div>
+    </LanguageProvider>
   );
 }
 

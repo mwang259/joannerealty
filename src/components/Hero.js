@@ -1,17 +1,21 @@
-import React from 'react';
+// src/components/Hero.js
+import React, { useContext } from 'react';
+import { LanguageContext } from './LanguageContext';
 
 function Hero() {
+  const { content } = useContext(LanguageContext);
+
   return (
     <section className="hero">
       <video autoPlay muted loop>
         <source src="/images/hero.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="hero-overlay  animate-fade-in">
-        <h1>Helping You Buy & Sell in Ottawa</h1>
+      <div className="hero-overlay animate-fade-in">
+        <h1>{content.hero_title}</h1>
         <div className="hero-buttons">
-          <button>Sell with Joanne</button>
-          <button>Buy with Joanne</button>
+          <button>{content.hero_sell_button}</button>
+          <button>{content.hero_buy_button}</button>
         </div>
       </div>
     </section>
