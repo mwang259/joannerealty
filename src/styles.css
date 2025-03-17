@@ -1,3 +1,5 @@
+/* src/styles.css */
+
 /* 全局样式 */
 body {
   margin: 0;
@@ -187,7 +189,7 @@ nav ul li:hover .dropdown {
 .language-dropdown {
   position: absolute;
   top: 100%;
-  left:  -50%;
+  left: -50%;
   background-color: #2d3748;
   border-radius: 0.25rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -277,7 +279,7 @@ nav ul li:hover .dropdown {
 
 /* 关于部分样式（居中） */
 .about {
-  padding: 7.5rem 0;
+  padding: 3.5rem 0;
   background-color: #1a202c;
   color: #ffffff;
   opacity: 0;
@@ -351,12 +353,12 @@ nav ul li:hover .dropdown {
   color: #ffffff;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  /* 移除 overflow: hidden，确保内容推动下方元素 */
 }
 
 .services-header {
   position: relative;
-  height: 700px;
+  /* 移除固定高度，让其根据内容自适应 */
   background-image: url('../public/images/services-selling-bg.jpg');
   background-size: cover;
   background-position: center;
@@ -399,8 +401,7 @@ nav ul li:hover .dropdown {
   position: relative;
   z-index: 3;
   padding: 1rem;
-  max-height: 500px;
-  overflow: hidden;
+  min-height: 0; /* 确保内容可以扩展 */
 }
 
 .service-left {
@@ -411,6 +412,7 @@ nav ul li:hover .dropdown {
   padding: 1rem;
   background: rgba(203, 157, 80, 0.3);
   border-radius: 0.5rem;
+  min-height: 400px; /* 确保最小高度 */
 }
 
 .service-right {
@@ -421,6 +423,7 @@ nav ul li:hover .dropdown {
   padding: 1rem;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 0.5rem;
+  min-height: 400px; /* 确保最小高度 */
 }
 
 .service-text {
@@ -481,6 +484,7 @@ nav ul li:hover .dropdown {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   padding: 1rem;
+  min-height: 200px; /* 确保图片区域有足够高度 */
 }
 
 .service-images img {
@@ -502,7 +506,7 @@ nav ul li:hover .dropdown {
   background: rgba(255, 255, 255, 0.3);
   text-align: center;
   position: relative;
-  height: 600px;
+  /* 移除固定高度，让其根据内容自适应 */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -883,8 +887,7 @@ footer p {
   }
 
   .services-header {
-    height: 600px;
-    padding-top: 4rem;
+    padding-top: 4rem; /* 移除固定高度 */
   }
 
   .services-header h2 {
@@ -894,12 +897,12 @@ footer p {
   .service-content {
     flex-direction: column;
     padding: 1rem;
-    max-height: 450px;
   }
 
   .service-left,
   .service-right {
     width: 100%;
+    min-height: 400px; /* 确保每个部分有足够高度 */
   }
 
   .service-text h3 {
@@ -913,6 +916,7 @@ footer p {
   .service-images {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
+    min-height: 200px; /* 确保图片区域可见 */
   }
 
   .service-images img {
@@ -932,7 +936,7 @@ footer p {
 
   .listings {
     padding: 3rem 0;
-    height: 500px;
+    /* 移除固定高度 */
   }
 
   .listings h2 {
@@ -1142,8 +1146,7 @@ footer p {
   }
 
   .services-header {
-    height: 500px;
-    padding-top: 3rem;
+    padding-top: 3rem; /* 移除固定高度 */
   }
 
   .services-header h2 {
@@ -1151,7 +1154,13 @@ footer p {
   }
 
   .service-content {
-    max-height: 350px;
+    flex-direction: column;
+  }
+
+  .service-left,
+  .service-right {
+    width: 100%;
+    min-height: 400px; /* 确保每个部分有足够高度 */
   }
 
   .service-text h3 {
@@ -1160,6 +1169,12 @@ footer p {
 
   .service-text p {
     font-size: 0.8rem;
+  }
+
+  .service-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    min-height: 200px; /* 确保图片区域可见 */
   }
 
   .service-images img {
@@ -1175,7 +1190,7 @@ footer p {
 
   .listings {
     padding: 2rem 0;
-    height: 450px;
+    /* 移除固定高度 */
   }
 
   .listings h2 {
@@ -1300,8 +1315,7 @@ footer p {
   }
 
   .services-header {
-    height: 400px;
-    padding-top: 2rem;
+    padding-top: 2rem; /* 移除固定高度 */
   }
 
   .services-header h2 {
@@ -1309,7 +1323,13 @@ footer p {
   }
 
   .service-content {
-    max-height: 300px;
+    flex-direction: column;
+  }
+
+  .service-left,
+  .service-right {
+    width: 100%;
+    min-height: 350px; /* 调整为更小的最小高度 */
   }
 
   .service-text h3 {
@@ -1322,6 +1342,8 @@ footer p {
 
   .service-images {
     grid-template-columns: 1fr;
+    gap: 0.5rem;
+    min-height: 150px; /* 调整图片区域高度 */
   }
 
   .service-images img {
@@ -1337,7 +1359,7 @@ footer p {
 
   .listings {
     padding: 2rem 0;
-    height: 350px;
+    /* 移除固定高度 */
   }
 
   .listings h2 {

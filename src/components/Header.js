@@ -103,9 +103,6 @@ function Header() {
                 <a href="#why-choose-me">{content.buying_resources}</a>
               </div>
             </li>
-            <li>
-              <a href="#about">{content.about}</a>
-            </li>
             <li
               onMouseEnter={() => setIsResourcesOpen(true)}
               onMouseLeave={() => setIsResourcesOpen(false)}
@@ -127,6 +124,12 @@ function Header() {
                   {content.Transfer_calculation}
                 </a>
               </div>
+            </li>
+            <li>
+              <a href="#about">{content.blog}</a>
+            </li>
+            <li>
+              <a href="#about">{content.contact}</a>
             </li>
 
             {isMobile && (
