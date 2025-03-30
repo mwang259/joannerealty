@@ -6,7 +6,7 @@ function Hero() {
   const { content } = useContext(LanguageContext);
 
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       <video autoPlay muted loop>
         <source src="/images/hero.mp4" type="video/mp4" />
         Your browser does not support the video tag.

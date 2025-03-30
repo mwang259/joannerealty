@@ -1,5 +1,6 @@
 // src/components/Header.js
 import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { LanguageContext } from './LanguageContext';
@@ -56,7 +57,7 @@ function Header() {
         <nav className={isNavOpen || !isMobile ? 'nav-open' : ''}>
           <ul>
             <li>
-              <a href="#home">{content.home}</a>
+              <Link to="/">{content.home}</Link>
             </li>
             <li
               onMouseEnter={() => setIsListingsOpen(true)}
@@ -69,9 +70,9 @@ function Header() {
                 className="dropdown listings-dropdown"
                 style={{ display: isListingsOpen ? 'block' : 'none' }}
               >
-                <a href="#map-search">{content.Map_search}</a>
-                <a href="#Featured_listings">{content.Featured_listings}</a>
-                <a href="#Search_listings">{content.Search_listings}</a>
+                {/* <a href="#map-search">{content.Map_search}</a> */}
+                <Link to="/featured-listings">{content.Featured_listings}</Link>
+                {/* <a href="#Search_listings">{content.Search_listings}</a> */}
               </div>
             </li>
             <li
@@ -126,7 +127,7 @@ function Header() {
               </div>
             </li>
             <li>
-              <a href="#about">{content.blog}</a>
+              <Link to="/blog">{content.blog}</Link>
             </li>
             <li>
               <a href="#about">{content.contact}</a>

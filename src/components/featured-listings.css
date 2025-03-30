@@ -1,0 +1,78 @@
+/* src/styles/featured-listings.css */
+.featured-listings {
+    background-color: #1a2526; /* Dark background to match the website theme */
+    color: #fff;
+    padding: 40px;
+    min-height: 100vh;
+  }
+  
+  .featured-listings h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #d4af37; /* Gold accent */
+    margin-top: 100px;
+  }
+  
+  .feartured-listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .feartured-listing-card {
+    background-color: #2a3439; /* Slightly lighter dark shade for cards */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feartured-listing-card:hover {
+    transform: translateY(-5px); /* Hover animation: lift effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .feartured-listing-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .feartured-listing-info {
+    padding: 15px;
+  }
+  
+  .feartured-listing-info h3 {
+    font-size: 1.5rem;
+    color: #d4af37; /* Gold price */
+    margin: 0;
+  }
+  
+  .feartured-listing-info p {
+    margin: 5px 0;
+    color: #ccc;
+  }
+  
+  .feartured-listing-details {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    color: #fff;
+  }
+  
+  .feartured-listing-info a {
+    display: inline-block;
+    background-color: #d4af37; /* Gold button */
+    color: #1a2526;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .feartured-listing-info a:hover {
+    background-color: #b8972e; /* Slightly darker gold on hover */
+  }

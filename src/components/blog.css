@@ -1,0 +1,303 @@
+/* src/components/blog.css */
+.blog-page {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, rgb(187 187 187 / 90%), rgb(0 0 0 / 90%)), url(https://pic.616pic.com/bg_w1180/00/00/71/iPsKep8ohc.jpg!/fw/1120);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Noto Sans SC', sans-serif; /* 支持中文的字体 */
+  }
+  
+  .blog-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .blog-header h1 {
+    font-size: 3.5rem;
+    color: #f1c40f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .blog-header p {
+    font-size: 1.2rem;
+    color: #d1d5db;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3.5rem;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .blog-card {
+    position: relative;
+    height: 300px; /* 固定卡片高度，增加高度以容纳更多内容 */
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(241, 196, 15, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.3s ease;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    overflow: hidden;
+  }
+  
+  /* 为每个卡片设置不同的高级渐变背景 */
+  .blog-card:nth-child(1) {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(20, 30, 48, 0.8));
+    animation-delay: 0.1s;
+  }
+  .blog-card:nth-child(2) {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(30, 40, 58, 0.8));
+    animation-delay: 0.2s;
+  }
+  .blog-card:nth-child(3) {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(40, 50, 68, 0.8));
+    animation-delay: 0.3s;
+  }
+  .blog-card:nth-child(4) {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(50, 60, 78, 0.8));
+    animation-delay: 0.4s;
+  }
+  .blog-card:nth-child(5) {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(60, 70, 88, 0.8));
+    animation-delay: 0.5s;
+  }
+  .blog-card:nth-child(6) {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(70, 80, 98, 0.8));
+    animation-delay: 0.6s;
+  }
+  .blog-card:nth-child(7) {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(80, 90, 108, 0.8));
+    animation-delay: 0.7s;
+  }
+  .blog-card:nth-child(8) {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(90, 100, 118, 0.8));
+    animation-delay: 0.8s;
+  }
+  .blog-card:nth-child(9) {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(100, 110, 128, 0.8));
+    animation-delay: 0.9s;
+  }
+  .blog-card:nth-child(10) {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.8), rgba(110, 120, 138, 0.8));
+    animation-delay: 1s;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-color: rgba(241, 196, 15, 0.5);
+  }
+  
+  .blog-content {
+    padding: 1.5rem;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .blog-date {
+    font-size: 0.9rem;
+    color: #d1d5db;
+    opacity: 0.8;
+    margin: 0;
+  }
+  
+  .blog-title {
+    font-size: 1.6rem;
+    color: #f1c40f;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .blog-card:hover .blog-title {
+    transform: translateY(-10px); /* 标题向上移动 */
+  
+  }
+  
+  .blog-excerpt-wrapper {
+    flex-grow: 1;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    height: 60px; /* 默认高度，显示 2 行 */
+  }
+  
+  .blog-card:hover .blog-excerpt-wrapper {
+    height: 200px; /* 悬浮时扩展到 2/3 卡片高度（300px 的 2/3 约为 200px） */
+  }
+  
+  .blog-excerpt {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    line-height: 1.8;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 默认显示 2 行 */
+    transition: -webkit-line-clamp 0.3s ease;
+  }
+  
+  .blog-card:hover .blog-excerpt {
+    -webkit-line-clamp: 4; /* 悬浮时显示 4 行 */
+  }
+  
+  .read-more-btn {
+    background-color: transparent;
+    color: #f1c40f;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #f1c40f;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0; /* 默认隐藏 */
+    align-self: flex-start;
+  }
+  
+  .blog-card:hover .read-more-btn {
+    opacity: 1; /* 悬浮时显示 */
+  }
+  
+  .read-more-btn:hover {
+    background-color: #f1c40f;
+    color: #1a202c;
+    transform: scale(1.05);
+  }
+  
+  /* 动态效果 */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .blog-header h1 {
+      font-size: 2.5rem;
+    }
+  
+    .blog-header p {
+      font-size: 1rem;
+    }
+  
+    .blog-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+  
+    .blog-card {
+      height: 280px;
+    }
+  
+    .blog-excerpt-wrapper {
+      height: 50px;
+    }
+  
+    .blog-card:hover .blog-excerpt-wrapper {
+      height: 180px;
+    }
+  
+    .blog-title {
+      font-size: 1.4rem;
+    }
+  
+    .blog-excerpt {
+      font-size: 1rem;
+      -webkit-line-clamp: 2;
+    }
+  
+    .blog-card:hover .blog-excerpt {
+      -webkit-line-clamp: 3;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .blog-header h1 {
+      font-size: 2rem;
+    }
+  
+    .blog-header p {
+      font-size: 0.9rem;
+    }
+  
+    .blog-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .blog-card {
+      height: 260px;
+    }
+  
+    .blog-excerpt-wrapper {
+      height: 40px;
+    }
+  
+    .blog-card:hover .blog-excerpt-wrapper {
+      height: 160px;
+    }
+  
+    .blog-title {
+      font-size: 1.2rem;
+    }
+  
+    .blog-excerpt {
+      font-size: 0.9rem;
+    }
+  
+    .read-more-btn {
+      font-size: 0.9rem;
+      padding: 0.4rem 1.2rem;
+    }
+  }
