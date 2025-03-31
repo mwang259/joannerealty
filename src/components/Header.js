@@ -87,7 +87,7 @@ function Header() {
                 style={{ display: isSellingOpen ? 'block' : 'none' }}
               >
                 <a href="#Selling Resources">{content.selling_resources}</a>
-                <a href="#Free Evaluation">{content.free_evaluation}</a>
+                <Link to="/home-evaluation">{content.free_evaluation}</Link>
               </div>
             </li>
             <li
@@ -129,9 +129,9 @@ function Header() {
             <li>
               <Link to="/blog">{content.blog}</Link>
             </li>
-            <li>
+            {/* <li>
               <a href="#about">{content.contact}</a>
-            </li>
+            </li> */}
 
             {isMobile && (
               <li className="mobile-language">

@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import FeaturedListings from './components/FeaturedListings';
 import Blog from './components/Blog'; 
 import BlogDetail from './components/BlogDetail';
+import HomeEvaluationForm from './components/HomeEvaluationForm';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/featured-listings" element={<FeaturedListings />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path="/home-evaluation" element={<HomeEvaluationForm />} />
       </Routes>
     </LanguageProvider>
   );
