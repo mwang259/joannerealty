@@ -8,6 +8,7 @@ function Hero() {
   return (
     <section className="hero" id="home">
       <video autoPlay muted loop>
+        {/* <img src="/images/"></> */}
         <source src="/images/hero.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
