@@ -776,6 +776,10 @@ footer {
   padding: 2rem 0;
 }
 
+footer a {
+  text-decoration: none;
+}
+
 footer p {
   color: #d1d5db;
   margin: 0;

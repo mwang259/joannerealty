@@ -122,7 +122,7 @@ const languageContent = {
     
     
     // Footer.js
-    footer_copyright: '© mengyuan wang & haopeng wang',
+    footer_copyright: '© Mengyuan wang & Haopeng wang',
   },
   Chinese: {
     // Header.js

@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer>
       <div className="container">
-        <p>{content.footer_copyright}</p>
+        <a  href="https://whp22.github.io/"><p>{content.footer_copyright}</p></a>
       </div>
     </footer>
   );
