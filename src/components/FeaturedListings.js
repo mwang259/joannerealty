@@ -7,7 +7,7 @@ const listingsData = [
   {
     id: 1,
     image: '/images/140_springhurst_ave_3-4.jpg',
-    price: '$539,000',
+    price: '$639,000',
     address: '905 - 1300 TITAN',
     city: 'Ottawa',
     beds: 2,
