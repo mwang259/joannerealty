@@ -6,14 +6,14 @@ function Social() {
   const { content } = useContext(LanguageContext);
 
   return (
-    <section className="social">
+    <section className="social" id='social'>
       <div className="container">
         <div className="social-content">
           {/* Left Section: Name */}
           <div className="social-left">
             <h2 className="social-name">Joanne Wang</h2>
             <p className="social-title">{content.social_title}</p>
-            <div className="social-social-section">
+            {/* <div className="social-social-section">
               <div className="social-icons">
                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-linkedin-in"></i>
@@ -31,8 +31,7 @@ function Social() {
                   <i className="fab fa-youtube"></i>
                 </a>
               </div>
-              {/* <button className="follow-btn">{content.social_follow_btn}</button> */}
-            </div>
+            </div> */}
           </div>
 
           {/* Center-Left Section: Contact Info */}

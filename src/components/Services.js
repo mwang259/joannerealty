@@ -1,6 +1,7 @@
 // Service.js
 import React, { useEffect, useContext } from 'react';
 import { LanguageContext } from './LanguageContext';
+import { Link } from 'react-router-dom';
 
 function Services() {
   const { content } = useContext(LanguageContext);
@@ -15,6 +16,13 @@ function Services() {
     });
   }, []);
 
+  const handleScrollToSocial = () => {
+    const socialSection = document.getElementById('social')
+    if(socialSection) {
+      socialSection.scrollIntoView({behavior:'smooth'})
+    }
+  }
+
   return (
     <section className="services">
       <div className="services-header">
@@ -25,9 +33,13 @@ function Services() {
               <h3>{content.services_selling_title}</h3>
               <p>{content.services_selling_p}</p>
               <div className="service-buttons animate-fade-in">
-                <button className="btn">{content.services_selling_btn1}</button>
+                {/* <button className="btn">{content.services_selling_btn1}</button> */}
+                <Link to={'/selling-resources'}>
                 <button className="btn">{content.services_selling_btn2}</button>
+                </Link>
+                <Link to={'/home-evaluation'}>
                 <button className="btn">{content.services_selling_btn3}</button>
+                </Link>
               </div>
             </div>
             <div className="service-images selling-images animate-fade-in">
@@ -44,9 +56,11 @@ function Services() {
               <h3>{content.services_buying_title}</h3>
               <p>{content.services_buying_p}</p>
               <div className="service-buttons animate-fade-in">
-                <button className="btn">{content.services_buying_btn1}</button>
+                {/* <button className="btn">{content.services_buying_btn1}</button> */}
+                <Link to={'/buying-resources'}>
                 <button className="btn">{content.services_buying_btn2}</button>
-                <button className="btn">{content.services_buying_btn3}</button>
+                </Link>
+                <button className="btn" onClick={handleScrollToSocial}>{content.services_buying_btn3}</button>
               </div>
             </div>
           </div>

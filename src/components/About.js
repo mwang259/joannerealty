@@ -2,6 +2,7 @@
 import React, { useEffect, useContext } from 'react';
 import { LanguageContext } from './LanguageContext';
 
+
 function About() {
   const { content } = useContext(LanguageContext);
 
@@ -14,6 +15,13 @@ function About() {
     }, 100);
   }, []);
 
+  const handleScrollToSocial = () => {
+    const socialSection = document.getElementById('social');
+    if(socialSection){
+      socialSection.scrollIntoView({behavior : 'smooth'});
+    }
+  }
+
   return (
     <section className="about">
       <div className="container">
@@ -23,7 +31,7 @@ function About() {
             <p className="animate-slide-up">{content.about_p1}</p>
             <p className="animate-slide-up">{content.about_p2}</p>
             <p className="animate-slide-up">{content.about_p3}</p>
-            <button className="btn animate-slide-up">{content.about_button}</button>
+            <button className="btn animate-slide-up" onClick={handleScrollToSocial}>{content.about_button}</button>
           </div>
           <div className="about-image">
             <img

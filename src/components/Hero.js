@@ -1,5 +1,5 @@
-// src/components/Hero.js
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { LanguageContext } from './LanguageContext';
 
 function Hero() {
@@ -7,16 +7,16 @@ function Hero() {
 
   return (
     <section className="hero" id="home">
-      <video autoPlay muted loop>
-        {/* <img src="/images/"></> */}
-        <source src="/images/hero.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <img src="/images/bg-sky.jpg" alt="hero background" className="hero-bg" />
       <div className="hero-overlay animate-fade-in">
         <h1>{content.hero_title}</h1>
         <div className="hero-buttons">
-          <button>{content.hero_sell_button}</button>
-          <button>{content.hero_buy_button}</button>
+        <Link to="/selling-resources">
+            <button>{content.hero_sell_button}</button>
+          </Link>
+          <Link to="/buying-resources">
+            <button>{content.hero_buy_button}</button>
+          </Link>
         </div>
       </div>
     </section>

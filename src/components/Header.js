@@ -1,4 +1,3 @@
-// src/components/Header.js
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -28,6 +27,12 @@ function Header() {
     setIsNavOpen(!isNavOpen);
   };
 
+  const closeNav = () => {
+    if (isMobile) {
+      setIsNavOpen(false);
+    }
+  };
+
   const toggleLanguageDropdown = (e) => {
     e.preventDefault();
     setIsLanguageOpen((prev) => !prev);
@@ -36,6 +41,33 @@ function Header() {
   const selectLanguage = (lang) => {
     setLanguage(lang);
     setIsLanguageOpen(false);
+    closeNav();
+  };
+
+  const toggleListingsDropdown = (e) => {
+    e.preventDefault();
+    setIsListingsOpen((prev) => !prev);
+  };
+
+  const toggleSellingDropdown = (e) => {
+    e.preventDefault();
+    setIsSellingOpen((prev) => !prev);
+  };
+
+  const toggleBuyingDropdown = (e) => {
+    e.preventDefault();
+    setIsBuyingOpen((prev) => !prev);
+  };
+
+  const toggleResourcesDropdown = (e) => {
+    e.preventDefault();
+    setIsResourcesOpen((prev) => !prev);
+  };
+
+  // 动态设置 language-dropdown 的 left 属性
+  const languageDropdownStyle = {
+    display: isLanguageOpen ? 'block' : 'none',
+    left: language === 'EN' ? '-50%' : '0%',
   };
 
   return (
@@ -57,81 +89,85 @@ function Header() {
         <nav className={isNavOpen || !isMobile ? 'nav-open' : ''}>
           <ul>
             <li>
-              <Link to="/">{content.home}</Link>
+              <Link to="/" onClick={closeNav}>
+                {content.home}
+              </Link>
             </li>
             <li
-              onMouseEnter={() => setIsListingsOpen(true)}
-              onMouseLeave={() => setIsListingsOpen(false)}
+              onMouseEnter={() => !isMobile && setIsListingsOpen(true)}
+              onMouseLeave={() => !isMobile && setIsListingsOpen(false)}
             >
-              <a href="#listings">
+              <a href="#listings" onClick={isMobile ? toggleListingsDropdown : undefined}>
                 {content.listings} <span className="dropdown-icon">▼</span>
               </a>
               <div
                 className="dropdown listings-dropdown"
                 style={{ display: isListingsOpen ? 'block' : 'none' }}
               >
-                {/* <a href="#map-search">{content.Map_search}</a> */}
-                <Link to="/featured-listings">{content.Featured_listings}</Link>
-                {/* <a href="#Search_listings">{content.Search_listings}</a> */}
+                <Link to="/featured-listings" onClick={closeNav}>
+                  {content.Featured_listings}
+                </Link>
               </div>
             </li>
             <li
-              onMouseEnter={() => setIsSellingOpen(true)}
-              onMouseLeave={() => setIsSellingOpen(false)}
+              onMouseEnter={() => !isMobile && setIsSellingOpen(true)}
+              onMouseLeave={() => !isMobile && setIsSellingOpen(false)}
             >
-              <a href="#selling">
+              <a href="#selling" onClick={isMobile ? toggleSellingDropdown : undefined}>
                 {content.selling} <span className="dropdown-icon">▼</span>
               </a>
               <div
                 className="dropdown"
                 style={{ display: isSellingOpen ? 'block' : 'none' }}
               >
-                <a href="#Selling Resources">{content.selling_resources}</a>
-                <Link to="/home-evaluation">{content.free_evaluation}</Link>
+                <Link to={`/selling-resources`} onClick={closeNav}>
+                  {content.selling_resources}
+                </Link>
+                <Link to="/home-evaluation" onClick={closeNav}>
+                  {content.free_evaluation}
+                </Link>
               </div>
             </li>
             <li
-              onMouseEnter={() => setIsBuyingOpen(true)}
-              onMouseLeave={() => setIsBuyingOpen(false)}
+              onMouseEnter={() => !isMobile && setIsBuyingOpen(true)}
+              onMouseLeave={() => !isMobile && setIsBuyingOpen(false)}
             >
-              <a href="#buying">
+              <a href="#buying" onClick={isMobile ? toggleBuyingDropdown : undefined}>
                 {content.buying} <span className="dropdown-icon">▼</span>
               </a>
               <div
                 className="dropdown"
                 style={{ display: isBuyingOpen ? 'block' : 'none' }}
               >
-                <a href="#why-choose-me">{content.buying_resources}</a>
+                <Link to={`/buying-resources`} onClick={closeNav}>
+                  {content.buying_resources}
+                </Link>
               </div>
             </li>
             <li
-              onMouseEnter={() => setIsResourcesOpen(true)}
-              onMouseLeave={() => setIsResourcesOpen(false)}
+              onMouseEnter={() => !isMobile && setIsResourcesOpen(true)}
+              onMouseLeave={() => !isMobile && setIsResourcesOpen(false)}
             >
-              <a href="#resources">
+              <a href="#resources" onClick={isMobile ? toggleResourcesDropdown : undefined}>
                 {content.resources} <span className="dropdown-icon">▼</span>
               </a>
               <div
                 className="dropdown"
                 style={{ display: isResourcesOpen ? 'block' : 'none' }}
               >
-                <a href="https://www.realtor.ca/calculator#v=payment" target="blank">
+                <a href="https://www.realtor.ca/calculator#v=payment" target="blank" onClick={closeNav}>
                   {content.Mortgage_calculation}
                 </a>
-                <a href="https://www.realtor.ca/calculator#v=affordability" target="blank">
-                  {content.Loan_calculation}
-                </a>
-                <a href="https://www.realtor.ca/calculator#v=landtransfertax" target="blank">
+                <a href="https://www.realtor.ca/calculator#v=landtransfertax" target="blank" onClick={closeNav}>
                   {content.Transfer_calculation}
                 </a>
               </div>
             </li>
             <li>
-              <Link to="/blog">{content.blog}</Link>
+              <Link to="/blog" onClick={closeNav}>
+                {content.blog}
+              </Link>
             </li>
-            {/* <li>
-              <a href="#about">{content.contact}</a>
-            </li> */}
 
             {isMobile && (
               <li className="mobile-language">
@@ -164,7 +200,7 @@ function Header() {
             </a>
             <div
               className="dropdown language-dropdown"
-              style={{ display: isLanguageOpen ? 'block' : 'none' }}
+              style={languageDropdownStyle}
             >
               <a href="#en" onClick={() => selectLanguage('EN')}>
                 EN

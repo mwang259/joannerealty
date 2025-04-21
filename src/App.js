@@ -14,6 +14,8 @@ import FeaturedListings from './components/FeaturedListings';
 import Blog from './components/Blog'; 
 import BlogDetail from './components/BlogDetail';
 import HomeEvaluationForm from './components/HomeEvaluationForm';
+import SellingResources from './components/SellingResources';
+import BuyingResources from './components/BuyingResources';
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/home-evaluation" element={<HomeEvaluationForm />} />
+        <Route path="/selling-resources" element={<SellingResources />} />
+        <Route path='/buying-resources' element={<BuyingResources />} />
       </Routes>
     </LanguageProvider>
   );

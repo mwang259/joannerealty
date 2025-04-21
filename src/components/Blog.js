@@ -1,93 +1,225 @@
-// src/components/Blog.js
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './blog.css';
+import Social from './Social';
+import { LanguageContext } from './LanguageContext';
 
 function Blog() {
+  const { language } = useContext(LanguageContext); // 获取当前语言
+
   const blogPosts = [
     {
       id: 1,
-      title: '2025年渥太华房地产市场分析：支持力度强劲',
-      excerpt: '渥太华房地产市场在2025年持续升温，政策支持和优质房源推动市场发展。',
-      date: 'March 15, 2025',
+      title: {
+        EN: 'Ottawa Real Estate Market Analysis 2025',
+        Chinese: '2025年渥太华房地产市场分析',
+        Japanese: '2025年オタワ不動産市場分析',
+      },
+      excerpt: {
+        EN: 'In January 2025, Ottawa’s real estate market saw some changes. While mortgage rates dropped and some properties received multiple offers, the market’s anticipation of a recovery is growing, but actual data shows cautious sentiment with an unclear overall trend.',
+        Chinese: '2025年1月，渥太华的房产市场迎来了一定的变化。虽然房贷利率下调，一些房源出现了抢Offer的情况，市场对回暖的期待也在升温，但从实际数据来看，市场情绪依然谨慎，整体走势仍然不甚明朗。',
+        Japanese: '2025年1月、オタワの不動産市場にいくつかの変化が見られました。住宅ローンの金利が下がり、一部の物件で複数のオファーが出る状況が見られ、市場の回復への期待が高まっていますが、実際のデータでは慎重なムードが続き、全体的な傾向は依然として不明確です。',
+      },
+      // date: {
+      //   EN: 'January, 2025',
+      //   Chinese: '2025年1月',
+      //   Japanese: '2025年1月',
+      // },
     },
     {
       id: 2,
-      title: '渥太华首次购房者必知的5个技巧',
-      excerpt: '为首次购房者提供实用建议，助你在渥太华找到理想的家。',
-      date: 'March 10, 2025',
+      title: {
+        EN: 'Market Data for February 2025',
+        Chinese: '2025年2月市场数据',
+        Japanese: '2025年2月市場データ',
+      },
+      excerpt: {
+        EN: 'According to the latest February 2025 market data released by the Ottawa Real Estate Board (OREB), Ottawa’s real estate market in February showed a decline in transaction volume, an increase in supply, and a slight price increase.',
+        Chinese: '根据渥太华房地产委员会（OREB）最新发布的2025年2月市场数据，渥太华房地产市场在2月的表现呈现出成交量下降、供应量增加、价格小幅上涨的趋势。',
+        Japanese: 'オタワ不動産委員会（OREB）が発表した最新の2025年2月市場データによると、オタワの不動産市場は2月に取引量の減少、供給量の増加、価格のわずかな上昇傾向を示しました。',
+      },
+      // date: {
+      //   EN: 'February, 2025',
+      //   Chinese: '2025年2月',
+      //   Japanese: '2025年2月',
+      // },
     },
     {
       id: 3,
-      title: '为什么渥太华是房地产投资的最佳选择',
-      excerpt: '渥太华稳定的经济和高质量生活使其成为投资热点。',
-      date: 'March 5, 2025',
+      title: {
+        EN: 'Real Estate Investment Step 3: Flexible Property Management',
+        Chinese: '房产投资第三步--灵活管理物业',
+        Japanese: '不動産投資の第3ステップ：柔軟な物件管理',
+      },
+      excerpt: {
+        EN: 'For landlords, managing tenants and maintaining rental properties isn’t as simple as “collecting rent monthly.” It involves legal regulations, communication, property maintenance, and more. Today, I’ll share some insights from my experience as a landlord managing rental properties.',
+        Chinese: '对于房东来说，管理租客维护出租屋的工作并不是“按月收钱”那么简单，还要涉及到法律法规，交流沟通，物业维护等诸多方面。今天就跟大家分享一些自己作为房东管理出租物业的心得。',
+        Japanese: '大家にとって、テナントの管理や賃貸物件のメンテナンスは「毎月家賃を集める」ほど単純ではありません。法律規制、コミュニケーション、物件メンテナンスなど多くの側面が含まれます。今日は、私が大家として賃貸物件を管理してきた経験からいくつかの洞察を共有します。',
+      },
+      // date: {
+      //   EN: 'March 5, 2025',
+      //   Chinese: '2025年3月5日',
+      //   Japanese: '2025年3月5日',
+      // },
     },
     {
       id: 4,
-      title: '如何快速出售你的渥太华房产',
-      excerpt: '学习最佳的房屋布置技巧，让你的房产在渥太华市场脱颖而出。',
-      date: 'February 28, 2025',
+      title: {
+        EN: 'Key Points to Know When Viewing a Resale Home in Canada',
+        Chinese: '加拿大二手房看房，这些要点你都知道吗？',
+        Japanese: 'カナダの中古住宅見学時に知っておくべきポイント',
+      },
+      excerpt: {
+        EN: 'Buying a resale home in Ottawa has its unique advantages: the community is usually well-established, offering a strong sense of community; mature trees, schools, shopping centers, and transportation are all readily available. However, when viewing a home, besides its appearance and renovations, there are many key details to pay attention to.',
+        Chinese: '在渥太华购买二手房有其独特的优势：社区通常已经成熟，您可以感受到浓厚的社区氛围；树木已经长成，学校、购物中心和交通设施一应俱全。不过，当您实地看房时，除了房屋的外观和装修，还需关注许多关键细节。',
+        Japanese: 'オタワで中古住宅を購入することには独自の利点があります。コミュニティは通常成熟しており、強いコミュニティ意識を感じることができます。木々は成長し、学校、ショッピングセンター、交通施設がすべて揃っています。ただし、住宅を見学する際には、外観やリノベーションだけでなく、注意すべき多くの重要な詳細があります。',
+      },
+      // date: {
+      //   EN: 'February 28, 2025',
+      //   Chinese: '2025年2月28日',
+      //   Japanese: '2025年2月28日',
+      // },
     },
     {
       id: 5,
-      title: '科技如何改变渥太华房地产市场',
-      excerpt: '从虚拟看房到AI分析，科技正在重塑渥太华的房地产行业。',
-      date: 'February 20, 2025',
+      title: {
+        EN: 'How to Make Your Home More Attractive to Buyers?',
+        Chinese: '如何让您的房子更吸引买家？',
+        Japanese: 'あなたの家を買い手にとって魅力的にする方法は？',
+      },
+      excerpt: {
+        EN: 'Here are 5 practical tips to enhance your home’s appeal.',
+        Chinese: '这里有5个实用小技巧，可以提升您房屋的吸引力。',
+        Japanese: 'ここでは、家の魅力を高めるための5つの実際的なヒントを紹介します。',
+      },
+      // date: {
+      //   EN: 'February 20, 2025',
+      //   Chinese: '2025年2月20日',
+      //   Japanese: '2025年2月20日',
+      // },
     },
     {
       id: 6,
-      title: '渥太华的可持续生活：环保住宅趋势',
-      excerpt: '探索如何在渥太华打造环保节能的家。',
-      date: 'February 15, 2025',
+      title: {
+        EN: 'Real Estate Investment Step 2: Strictly Screening Tenants',
+        Chinese: '投资房产第二步--严格筛选租客',
+        Japanese: '不動産投資の第2ステップ：テナントの厳格なスクリーニング',
+      },
+      excerpt: {
+        EN: 'Economist Zhang Wuchang said, “Real estate is a warehouse for storing wealth.” Some also say that if a city or country is likened to a company, then real estate is that company’s stock...',
+        Chinese: '经济学家张五常说“房地产是财富储存的仓库”。也有人说如果把一个城市或国家当作一家公司，那么房地产就是这家公司的股票。买房就意味着你看好这家公司，投资这家公司，并跟随着公司快速发展，分享公司成长的利润。然而，房地产投资不是每个人都能做，房东更不是每个人都能当。要想长期的持有（hold）物业，当一个省心的房东，就必须严格筛选租客。那么，我们该如何筛选租客呢？',
+        Japanese: '経済学者の張五常は、「不動産は富を蓄える倉庫だ」と言いました。また、都市や国を一つの企業に例えるなら、不動産はその企業の株式だと言う人もいます...',
+      },
+      // date: {
+      //   EN: 'February 15, 2025',
+      //   Chinese: '2025年2月15日',
+      //   Japanese: '2025年2月15日',
+      // },
     },
     {
       id: 7,
-      title: '与渥太华房地产经纪合作的益处',
-      excerpt: '专业经纪人如何为你节省时间和金钱。',
-      date: 'February 10, 2025',
+      title: {
+        EN: 'Real Estate Investment Step 1: Choosing the Right Rental Property',
+        Chinese: '投资房产第一步--选择合适的出租物业',
+        Japanese: '不動産投資の第1ステップ：適切な賃貸物件の選択',
+      },
+      excerpt: {
+        EN: 'The first step in real estate investment is to carefully select the right property (buy). Only by doing this step well can you attract quality tenants, helping you hold the property long-term (hold); at the same time, a good property has significant appreciation potential, allowing you to profit when you eventually sell (sell). So, what should we pay attention to when choosing an investment property?',
+        Chinese: '房地产投资的第一步就是要仔细选择合适的房产（buy），只有这一步做好了，才能吸引优质租客，帮助我们长期持有（hold）房产; 同时好的物业未来升值空间大，最终售出时才能获利（sell）。那么，在选择投资房时，我们要注意什么呢？',
+        Japanese: '不動産投資の最初のステップは、適切な物件（購入）を慎重に選ぶことです。このステップをうまく行うことで、質の高いテナントを引きつけ、長期保有（ホールド）を助けます。同時に、良い物件は将来的に大きな値上がり余地があり、最終的に売却（セル）時に利益を得ることができます。それでは、投資物件を選ぶ際に何に注意すべきでしょうか？',
+      },
+      // date: {
+      //   EN: 'February 10, 2025',
+      //   Chinese: '2025年2月10日',
+      //   Japanese: '2025年2月10日',
+      // },
     },
     {
       id: 8,
-      title: '提升渥太华房产价值的装修建议',
-      excerpt: '简单装修即可大幅提升你的房产市场价值。',
-      date: 'February 5, 2025',
+      title: {
+        EN: 'The Process of Selling a Home in Ottawa',
+        Chinese: '渥太华卖房流程',
+        Japanese: 'オタワでの住宅売却プロセス',
+      },
+      excerpt: {
+        EN: 'Selling a home is a complex process, from preparing the property and marketing it to negotiations and paperwork—there are many steps to handle. Today, I’ll discuss the process of selling a home in Ottawa and share practical tips and strategies to maximize your home’s value and attract potential buyers.',
+        Chinese: '卖房是一个复杂的过程，从准备房产、营销房源，到谈判和文书工作——有许多环节需要处理。今天就和大家聊一聊在渥太华卖房的流程，并分享实用技巧和策略，帮助您最大限度提升房屋的价值，吸引潜在买家。',
+        Japanese: '住宅の売却は複雑なプロセスであり、物件の準備やマーケティングから交渉、書類手続きまで、多くのステップを処理する必要があります。今日は、オタワでの住宅売却プロセスについて話し、家の価値を最大化し、潜在的な買い手を引きつけるための実際的なヒントと戦略を共有します。',
+      },
+      // date: {
+      //   EN: 'February 5, 2025',
+      //   Chinese: '2025年2月5日',
+      //   Japanese: '2025年2月5日',
+      // },
     },
     {
       id: 9,
-      title: '渥太华购房者的按揭流程解析',
-      excerpt: '一步步了解如何在渥太华申请按揭贷款。',
-      date: 'January 30, 2025',
+      title: {
+        EN: 'Where Are Ottawa’s Top-Ranked Elementary Schools?',
+        Chinese: '渥太华排名最好的小学在哪儿？',
+        Japanese: 'オタワでトップランクの小学校はどこ？',
+      },
+      excerpt: {
+        EN: 'After school district boundaries are adjusted, what should you pay special attention to when buying a home?',
+        Chinese: '学区边界调整后，买房需要特别注意什么？',
+        Japanese: '学区の境界が調整された後、住宅購入時に特に注意すべきことは何ですか？',
+      },
+      // date: {
+      //   EN: 'January 30, 2025',
+      //   Chinese: '2025年1月30日',
+      //   Japanese: '2025年1月30日',
+      // },
     },
     {
       id: 10,
-      title: '远程工作如何影响渥太华的住房选择',
-      excerpt: '远程工作让更多人选择渥太华的郊区和乡村生活。',
-      date: 'January 25, 2025',
+      title: {
+        EN: '8 Steps to Finding Your Ideal Home in Ottawa',
+        Chinese: '在渥太华找到理想住房的8个步骤',
+        Japanese: 'オタワで理想の住宅を見つけるための8つのステップ',
+      },
+      excerpt: {
+        EN: 'Congratulations on taking the first step toward buying a home. Owning your own house is one of life’s greatest joys and achievements. This is an exciting process, and this guide will provide you with clear direction and peace of mind on your home-buying journey in Ottawa.',
+        Chinese: '恭喜您迈出了购房的第一步。拥有自己的房子是人生最伟大的喜悦和成就之一。这是一个令人兴奋的过程，而这份指南将为您在渥太华的购房旅程提供清晰的方向和安心的保障。',
+        Japanese: '住宅購入の第一歩を踏み出したことをお祝いします。自分の家を持つことは、人生最大の喜びと達成の一つです。これはエキサイティングなプロセスであり、このガイドはオタワでの住宅購入の旅に明確な方向性と安心を提供します。',
+      },
+      // date: {
+      //   EN: 'January 25, 2025',
+      //   Chinese: '2025年1月25日',
+      //   Japanese: '2025年1月25日',
+      // },
     },
   ];
 
   return (
-    <section className="container-full blog-page">
-      <div className="blog-header">
-        <h1>我们的博客</h1>
-        <p>了解渥太华房地产市场的最新趋势、技巧和见解。</p>
-      </div>
-      <div className="blog-grid">
-        {blogPosts.map((post) => (
-          <div className="blog-card" key={post.id}>
-            <div className="blog-content">
-              <h3 className="blog-title">{post.title}</h3>
-              <p className="blog-date">{post.date}</p>
-              <p className="blog-excerpt">{post.excerpt}</p>
-              <Link to={`/blog/${post.id}`} className="read-more-btn">
-                阅读更多
-              </Link>
+    <div>
+      <section className="container-full blog-page">
+        <div className="blog-header">
+          <h1>{language === 'EN' ? 'Our Blog' : language === 'Chinese' ? '我们的博客' : '私たちのブログ'}</h1>
+          <p>
+            {language === 'EN'
+              ? 'Stay updated with the latest trends, tips, and insights on Ottawa’s real estate market.'
+              : language === 'Chinese'
+              ? '了解渥太华房地产市场的最新趋势、技巧和见解。'
+              : 'オタワの不動産市場の最新トレンド、ヒント、洞察を常に把握してください。'}
+          </p>
+        </div>
+        <div className="blog-grid">
+          {blogPosts.map((post) => (
+            <div className="blog-card" key={post.id}>
+              <div className="blog-content">
+                <h3 className="blog-title">{post.title[language]}</h3>
+                {/* <p className="blog-date">{post.date[language]}</p> */}
+                <p className="blog-excerpt">{post.excerpt[language]}</p>
+                <Link to={`/blog/${post.id}`} className="read-more-btn">
+                  {language === 'EN' ? 'Read More' : language === 'Chinese' ? '阅读更多' : 'もっと読む'}
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+      <Social />
+    </div>
   );
 }
 

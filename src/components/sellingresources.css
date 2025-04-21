@@ -1,0 +1,204 @@
+/* src/components/selling-detail.css */
+.selling-detail-page {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, rgb(85 108 137 / 90%), rgb(1 6 12 / 90%));
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .selling-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+    background: rgb(124 124 124 / 70%);
+    border-radius: 0.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(241, 196, 15, 0.2);
+    padding: 2rem;
+  }
+  
+  .selling-detail-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .selling-detail-container h1 {
+    font-size: 2.2em;
+    color: #f1c40f;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .selling-date {
+    font-size: 1rem;
+    color: #d1d5db;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  .selling-detail-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d1d5db;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .selling-detail-content img {
+    max-width: 98%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+  }
+
+  .selling-detail-content ol {
+    list-style-type: inherit;
+  }
+
+  .selling-detail-content h1 {
+    color: #d9ab29;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .selling-detail-content p {
+    margin-bottom: 1rem;
+  }
+  
+  .selling-detail-content ol {
+    padding-left: 1.5rem;
+  }
+  
+  .selling-detail-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .school-table {
+    width: 100%;
+    max-width: 785px;
+    margin: 20px 0;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .school-table th,
+  .school-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .school-table th {
+    background-color: #2d3748;
+    color: #f1c40f;
+    font-weight: bold;
+  }
+  
+  .school-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .school-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .back-btn {
+    display: inline-block;
+    background-color: #f1c40f;
+    color: #1a202c;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    background-color: #e0b50a;
+    transform: scale(1.05);
+  }
+  
+  /* 动态效果 */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .selling-detail-header h1 {
+      font-size: 2rem;
+    }
+  
+    .selling-date {
+      font-size: 0.9rem;
+    }
+  
+    .selling-detail-content {
+      font-size: 1rem;
+    }
+
+    .selling-detail-content img {
+      margin: 15px 0;
+    }
+
+    .school-table {
+      font-size: 0.9rem;
+    }
+  
+    .school-table th,
+    .school-table td {
+      padding: 8px 10px;
+    }
+
+  }
+  
+  @media (max-width: 480px) {
+    .selling-detail-header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .selling-date {
+      font-size: 0.8rem;
+    }
+  
+    .selling-detail-content {
+      font-size: 0.9rem;
+    }
+
+    .selling-detail-content img {
+      margin: 10px 0;
+    }
+  }
