@@ -193,7 +193,7 @@ const languageContent = {
     social_chat_btn: '今すぐLeiとライブチャット！',
     
     // Footer.js
-    footer_copyright: '© ワン・メンユアン & ワン・ハオペン',
+    footer_copyright: '© Mengyuan wang & Haopeng wang',
   },
 };
 
