@@ -43,14 +43,14 @@ function Services() {
               </div>
             </div>
             <div className="service-images selling-images animate-fade-in">
-              <img src="images/60288_richmond_1.jpg" alt="Selling 1" />
-              <img src="/images/60288_richmond_3.jpg" alt="Selling 2" />
+              <img src="/images/60288_richmond_19.jpg" alt="Selling 1" />
+              <img src="/images/60288_richmond_25.jpg" alt="Selling 2" />
             </div>
           </div>
           <div className="service-right">
             <div className="service-images buying-images animate-fade-in">
-              <img src="images/60288_richmond_22.jpg" alt="Buying 1" />
-              <img src="/images/60288_richmond_26.jpg" alt="Buying 2" />
+              <img src="/images/60288_richmond_9.jpg" alt="Buying 1" />
+              <img src="/images/634_expansion_road_5_38.jpg" alt="Buying 2" />
             </div>
             <div className="service-text buying-text animate-slide-up">
               <h3>{content.services_buying_title}</h3>

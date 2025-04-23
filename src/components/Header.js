@@ -155,10 +155,10 @@ function Header() {
                 className="dropdown"
                 style={{ display: isResourcesOpen ? 'block' : 'none' }}
               >
-                <a href="https://www.realtor.ca/calculator#v=payment" target="blank" onClick={closeNav}>
+                <a href="https://www.realtor.ca/calculator#v=payment" onClick={closeNav}>
                   {content.Mortgage_calculation}
                 </a>
-                <a href="https://www.realtor.ca/calculator#v=landtransfertax" target="blank" onClick={closeNav}>
+                <a href="https://www.realtor.ca/calculator#v=landtransfertax" onClick={closeNav}>
                   {content.Transfer_calculation}
                 </a>
               </div>

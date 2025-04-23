@@ -4,36 +4,36 @@ import './featured-listings.css'; // Separate CSS file for this page
 import Social from './Social';
 
 const listingsData = [
-  {
-    id: 1,
-    image: '/images/140_springhurst_ave_3-4.jpg',
-    price: '$639,000',
-    address: '905 - 1300 TITAN',
-    city: 'Ottawa',
-    beds: 2,
-    baths: 2,
-    link: 'https://www.realtor.ca/real-estate/27977844/634-expansion-road-ottawa-7711-barrhaven-half-moon-bay',
-  },
-  {
-    id: 2,
-    image: '/images/140_springhurst_ave_3-10.jpg',
-    price: '$279,900',
-    address: '130 PRINCE OF WALES DRIVE',
-    city: 'Ottawa',
-    beds: 2,
-    baths: 1,
-    link: 'https://www.realtor.ca/real-estate/27977844/634-expansion-road-ottawa-7711-barrhaven-half-moon-bay',
-  },
-  {
-    id: 3,
-    image: '/images/140_springhurst_ave_3-2.jpg',
-    price: '$524,900',
-    address: '254 FLANNERY DRIVE',
-    city: 'Ottawa',
-    beds: 3,
-    baths: 2,
-    link: 'https://www.realtor.ca/real-estate/27977844/634-expansion-road-ottawa-7711-barrhaven-half-moon-bay',
-  },
+  // {
+  //   id: 1,
+  //   image: '/images/140_springhurst_ave_3-4.jpg',
+  //   price: '$639,000',
+  //   address: '905 - 1300 TITAN',
+  //   city: 'Ottawa',
+  //   beds: 2,
+  //   baths: 2,
+  //   link: 'https://www.realtor.ca/real-estate/27977844/634-expansion-road-ottawa-7711-barrhaven-half-moon-bay',
+  // },
+  // {
+  //   id: 2,
+  //   image: '/images/140_springhurst_ave_3-10.jpg',
+  //   price: '$279,900',
+  //   address: '130 PRINCE OF WALES DRIVE',
+  //   city: 'Ottawa',
+  //   beds: 2,
+  //   baths: 1,
+  //   link: 'https://www.realtor.ca/real-estate/27977844/634-expansion-road-ottawa-7711-barrhaven-half-moon-bay',
+  // },
+  // {
+  //   id: 3,
+  //   image: '/images/140_springhurst_ave_3-2.jpg',
+  //   price: '$524,900',
+  //   address: '254 FLANNERY DRIVE',
+  //   city: 'Ottawa',
+  //   beds: 3,
+  //   baths: 2,
+  //   link: 'https://www.realtor.ca/real-estate/27977844/634-expansion-road-ottawa-7711-barrhaven-half-moon-bay',
+  // },
 
 ];
 
