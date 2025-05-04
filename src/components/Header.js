@@ -104,9 +104,12 @@ function Header() {
                 className="dropdown listings-dropdown"
                 style={{ display: isListingsOpen ? 'block' : 'none' }}
               >
-                <Link to="/featured-listings" onClick={closeNav}>
+                {/* <Link to="/featured-listings" onClick={closeNav}>
                   {content.Featured_listings}
-                </Link>
+                </Link> */}
+                <a href='https://kwintegrity.ca/featured-listings/' target='blank' onClick={closeNav}>
+                  {content.Office_listings}
+                </a>
               </div>
             </li>
             <li

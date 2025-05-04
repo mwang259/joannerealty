@@ -1,94 +1,94 @@
 // src/components/HomeEvaluationForm.js
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import './homeevaluationform.css';
 import Social from './Social';
 
 
 function HomeEvaluationForm() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    city: '',
-    propertyType: '',
-    size: '',
-    bedrooms: '',
-    bathrooms: '',
-    garage: '',
-    yearBuilt: '',
-    features: '',
-    purpose: '',
-    howHeard: '',
-    agreeToContact: false,
-  });
+  // const [formData, setFormData] = useState({
+  //   firstName: '',
+  //   lastName: '',
+  //   email: '',
+  //   phone: '',
+  //   address: '',
+  //   city: '',
+  //   propertyType: '',
+  //   size: '',
+  //   bedrooms: '',
+  //   bathrooms: '',
+  //   garage: '',
+  //   yearBuilt: '',
+  //   features: '',
+  //   purpose: '',
+  //   howHeard: '',
+  //   agreeToContact: false,
+  // });
 
-  const [status, setStatus] = useState('');
+  // const [status, setStatus] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value,
-    });
-  };
+  // const handleChange = (e) => {
+  //   const { name, value, type, checked } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: type === 'checkbox' ? checked : value,
+  //   });
+  // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('正在发送...');
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setStatus('正在发送...');
 
-    try {
-      const response = await fetch('http://localhost:5000/save-submission', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+  //   try {
+  //     const response = await fetch('http://localhost:5000/save-submission', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
 
-      if (response.ok) {
-        setStatus('信息已成功发送！');
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          address: '',
-          city: '',
-          propertyType: '',
-          size: '',
-          bedrooms: '',
-          bathrooms: '',
-          garage: '',
-          yearBuilt: '',
-          features: '',
-          purpose: '',
-          howHeard: '',
-          agreeToContact: false,
-        });
-      } else {
-        setStatus('发送失败，请稍后再试。');
-      }
-    } catch (error) {
-      setStatus('发送失败，请检查网络连接。');
-    }
-  };
+  //     if (response.ok) {
+  //       setStatus('信息已成功发送！');
+  //       setFormData({
+  //         firstName: '',
+  //         lastName: '',
+  //         email: '',
+  //         phone: '',
+  //         address: '',
+  //         city: '',
+  //         propertyType: '',
+  //         size: '',
+  //         bedrooms: '',
+  //         bathrooms: '',
+  //         garage: '',
+  //         yearBuilt: '',
+  //         features: '',
+  //         purpose: '',
+  //         howHeard: '',
+  //         agreeToContact: false,
+  //       });
+  //     } else {
+  //       setStatus('发送失败，请稍后再试。');
+  //     }
+  //   } catch (error) {
+  //     setStatus('发送失败，请检查网络连接。');
+  //   }
+  // };
 
-  // 定义年份范围选项
-  const yearBuiltOptions = [
-    'Before 1950',
-    '1950-1960',
-    '1960-1970',
-    '1970-1980',
-    '1980-1990',
-    '1990-2000',
-    '2000-2005',
-    '2005-2010',
-    '2010-2015',
-    '2015-2020',
-    '2020+',
-  ];
+  // // 定义年份范围选项
+  // const yearBuiltOptions = [
+  //   'Before 1950',
+  //   '1950-1960',
+  //   '1960-1970',
+  //   '1970-1980',
+  //   '1980-1990',
+  //   '1990-2000',
+  //   '2000-2005',
+  //   '2005-2010',
+  //   '2010-2015',
+  //   '2015-2020',
+  //   '2020+',
+  // ];
 
   return (
     <div>
@@ -96,9 +96,11 @@ function HomeEvaluationForm() {
         <div className="home-evaluation-container">
           <h1>房屋评估表格</h1>
           <p>
-            填写以下房屋评估表单，获取您房屋在当前市场的免费比较市场分析报告。报告将在24小时内发送给您，不仅能帮助您评估房屋价值，还能提供未来社区发展的更多见解！
+            填写房屋评估表单(<a href='https://docs.google.com/forms/d/e/1FAIpQLSfIWjRTcjK3uccyLJYnUPK5wN2hg4ekEnQZPV-U7Qd7m-KKdA/viewform?usp=dialog'>LINK</a>)，获取您房屋在当前市场的免费比较市场分析报告。报告将在24小时内发送给您，不仅能帮助您评估房屋价值，还能提供未来社区发展的更多见解！
+            
           </p>
-          <form onSubmit={handleSubmit} className="home-evaluation-form">
+          
+          {/* <form onSubmit={handleSubmit} className="home-evaluation-form">
             <div className="form-section">
               <h2>1. 联系信息</h2>
               <div className="form-row">
@@ -352,8 +354,8 @@ function HomeEvaluationForm() {
             <button type="submit" className="submit-btn">
               提交
             </button>
-          </form>
-          {status && <p className="status-message">{status}</p>}
+          </form> */}
+          {/* {status && <p className="status-message">{status}</p>} */}
         </div>
       </section>
       <Social />

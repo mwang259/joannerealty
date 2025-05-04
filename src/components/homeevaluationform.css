@@ -38,6 +38,11 @@
     margin-bottom: 2rem;
     animation: fadeIn 1.5s ease-out;
   }
+
+  .home-evaluation-container a{
+    color: #f1c40f;
+    font-weight: 1000;
+  }
   
   .home-evaluation-form {
     display: flex;
