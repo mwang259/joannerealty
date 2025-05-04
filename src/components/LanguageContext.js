@@ -51,6 +51,7 @@ const languageContent = {
     services_buying_btn2: 'BUYING PROCESS',
     services_buying_btn3: 'CONTACT US',
     
+    
     // Listings (Social.js 中房源部分)
     listings_title: 'Living in Ottawa',
     listings_view_more: 'VIEW MORE',
@@ -66,7 +67,9 @@ const languageContent = {
     social_qr_line: 'Line',
     social_qr_facebook: 'Facebook',
     social_chat_btn: 'Chat live with Lei now!',
-    
+    evaluation_title: 'Home Evaluation Form',
+    evaluation_front:'Please fill out the home evaluation form',
+    evaluation_back: ',to receive a free Comparative Market Analysis report for your property in the current market. The report will be sent to you within 24 hours, helping you assess your home’s value and providing insights into future community developments!',
     
     // Footer.js
     footer_copyright: '© Mengyuan wang & Haopeng wang',
@@ -114,6 +117,9 @@ const languageContent = {
     services_buying_btn1: '为什么选择我',
     services_buying_btn2: '购买流程',
     services_buying_btn3: '联系我们',
+    evaluation_title: '房屋评估表格',
+    evaluation_front: '请填写房屋评估表单',
+    evaluation_back: ',获取您房屋在当前市场的免费比较市场分析报告。报告将在24小时内发送给您，不仅能帮助您评估房屋价值，还能提供未来社区发展的更多见解！',
     
     // Listings (Social.js 中房源部分)
     listings_title: '住在渥太华',
@@ -178,6 +184,9 @@ const languageContent = {
     services_buying_btn1: 'なぜ私を選ぶのか',
     services_buying_btn2: '購入プロセス',
     services_buying_btn3: 'お問い合わせ',
+    evaluation_title: '住宅評価フォーム',
+    evaluation_front: '住宅評価フォーム',
+    evaluation_back: ',を記入して、現在の市場におけるあなたの不動産の無料比較市場分析レポートを受け取ります。レポートは24時間以内に送信され、住宅の価値を評価するだけでなく、将来の地域開発に関する洞察も提供します！',
     
     // Listings (Social.js 中房源部分)
     listings_title: 'オタワでの生活',
